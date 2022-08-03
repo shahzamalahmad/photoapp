@@ -1,0 +1,31 @@
+
+<h1>
+<%= @category_id %>
+
+</h1>
+
+<br>
+
+<% @photos.each do |photo| %>
+<div class="container">
+  <div class="row">
+  	<div class="col">
+
+		<div class="card" style="width: 18rem;">
+			<%= image_tag(photo.image, class:"card-img-top") %>
+		  <div class="card-body">
+		    <h5 class="card-title"><%= photo.image %></h5>
+		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		    <%= link_to "show", image_tag(photo.image, class:"card-img-top") %>
+		  </div>
+		</div>
+		<br>
+	</div>
+  </div>
+</div>
+
+
+
+<% end %>
+

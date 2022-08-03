@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+   <h1> 
+    <%= link_to "CliciT", root_path, class: "input_field" %>
+    </h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link active" %>
+        </li>
+
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+
+        <li class="nav-item">
+          <%= link_to "About", home_about_path, class: "nav-link active" %>
+        </li>
+
+    <% if current_user.present? %>
+    
+<ul class="nav nav-tabs">
+  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="http://localhost:3000/photoworld/index" role="button" aria-expanded="false">Photoworld</a>
+    <ul class="dropdown-menu">
+            <li>
+                <%= link_to "Nature", photoworld_nature_path, class: "dropdown-item"  %>
+            </li>
+            <li> 
+                <%= link_to "Adventure", photoworld_adventure_path, class: "dropdown-item" %>
+            </li>
+            <li>
+                <%= link_to "Wild Life", photoworld_wild_path, class: "dropdown-item" %>
+            </li>
+            
+          </ul>
+  </li>
+  
+</ul>
+
+
+       
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_user_session_path, class: "nav-link active" %>
+        </li>
+    <% end %>
+        
+      </ul>
+
+
+      <% if current_user.present? %>
+
+        <p style= "text-align: right", class="text-info"> 
+          
+              
+             <%= current_user.email %> 
+             &nbsp
+              &nbsp
+        </p> 
+        <% else %>
+          <span class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %>
+           </span>
+          <span class="nav-item">
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link active" %>
+          </span>
+      <% end %>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

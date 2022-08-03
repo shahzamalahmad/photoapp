@@ -1,0 +1,36 @@
+
+<div class="topdiv">
+	<h1 style="background-color: lightblue; text-align: center;">
+		Categories
+	</h1>
+</div>
+<div>
+	<!-- <div>
+		<_%= render 'photoworld/nature' %>
+		
+	</div>
+	<div>
+		<_%= render 'photoworld/adventure' %>
+		
+	</div>
+	<div>
+		<_%= render 'photoworld/wild' %>
+		
+	</div> -->
+	<% @categorys.each do |category| %>
+
+		<!-- <#%= link_to category.name, photoworld_show_path(category) %> -->
+
+		<a href="/photoworld/show/<%= category.id %>"> <%= category.name %> </a>
+
+		<br>
+		<br>
+
+	<% end %>
+</div>
+<!-- <div>
+	<#%= form.lable :title, style: "display :block" %>
+
+</div> -->
+
+
